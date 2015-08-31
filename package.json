@@ -1,0 +1,31 @@
+{
+  "name": "is-data-descriptor",
+  "description": "Returns true if a value appears to be a valid JavaScript data descriptor.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/is-data-descriptor",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/is-data-descriptor",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/is-data-descriptor/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "arr-diff": "^1.1.0",
+    "kind-of": "^2.0.1"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": []
+}
