@@ -1,6 +1,6 @@
 # is-data-descriptor [![NPM version](https://badge.fury.io/js/is-data-descriptor.svg)](http://badge.fury.io/js/is-data-descriptor)
 
-> Returns true if a value appears to be a valid JavaScript data descriptor.
+> Returns true if a value has the characteristics of a valid JavaScript data descriptor.
 
 ## Install
 
