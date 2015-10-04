@@ -1,7 +1,7 @@
 {
   "name": "is-data-descriptor",
   "description": "Returns true if a value has the characteristics of a valid JavaScript data descriptor.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/jonschlinkert/is-data-descriptor",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/is-data-descriptor",
@@ -10,7 +10,8 @@
   },
   "license": "MIT",
   "files": [
-    "index.js"
+    "index.js",
+    "utils.js"
   ],
   "main": "index.js",
   "engines": {
