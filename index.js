@@ -7,8 +7,7 @@
 
 'use strict';
 
-var diff = require('arr-diff');
-var typeOf = require('kind-of');
+var utils = require('./utils');
 
 // data descriptor properties
 var data = {
@@ -18,7 +17,7 @@ var data = {
 };
 
 function isDataDescriptor(obj) {
-  if (typeOf(obj) !== 'object') {
+  if (utils.typeOf(obj) !== 'object') {
     return false;
   }
 
@@ -26,12 +25,12 @@ function isDataDescriptor(obj) {
   var keys = getKeys(obj);
 
   if (obj.hasOwnProperty('value')) {
-    if (diff(keys, dataKeys).length !== 1) {
+    if (utils.diff(keys, dataKeys).length !== 1) {
       return false;
     }
     for (var key in obj) {
       if (key === 'value') continue;
-      if (typeOf(obj[key]) !== data[key]) {
+      if (utils.typeOf(obj[key]) !== data[key]) {
         return false;
       }
     }
