@@ -1,7 +1,7 @@
 {
   "name": "is-data-descriptor",
   "description": "Returns true if a value has the characteristics of a valid JavaScript data descriptor.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/jonschlinkert/is-data-descriptor",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/is-data-descriptor",
@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "arr-diff": "^1.1.0",
-    "kind-of": "^2.0.1"
+    "kind-of": "^2.0.1",
+    "lazy-cache": "^0.2.3"
   },
   "devDependencies": {
     "mocha": "*",
