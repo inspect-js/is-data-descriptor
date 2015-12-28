@@ -7,7 +7,7 @@
 
 'use strict';
 
-var utils = require('./utils');
+var typeOf = require('kind-of');
 
 // data descriptor properties
 var data = {
@@ -16,37 +16,36 @@ var data = {
   writable: 'boolean'
 };
 
-function isDataDescriptor(obj) {
-  if (utils.typeOf(obj) !== 'object') {
+function isDataDescriptor(obj, prop) {
+  if (typeOf(obj) !== 'object') {
     return false;
   }
 
-  var dataKeys = Object.keys(data);
-  var keys = getKeys(obj);
+  if (typeof prop === 'string') {
+    var val = Object.getOwnPropertyDescriptor(obj, prop);
+    return typeof val !== 'undefined';
+  }
 
-  if (obj.hasOwnProperty('value')) {
-    if (utils.diff(keys, dataKeys).length !== 1) {
-      return false;
+  if (!('value' in obj) && !('writable' in obj)) {
+    return false;
+  }
+
+  for (var key in obj) {
+    if (key === 'value') continue;
+
+    if (!data.hasOwnProperty(key)) {
+      continue;
     }
-    for (var key in obj) {
-      if (key === 'value') continue;
-      if (utils.typeOf(obj[key]) !== data[key]) {
-        return false;
-      }
+
+    if (typeOf(obj[key]) === data[key]) {
+      continue;
+    }
+
+    if (typeof obj[key] !== 'undefined') {
+      return false;
     }
   }
   return true;
-}
-
-/**
- * Get object keys. `Object.keys()` only gets
- * enumerable properties.
- */
-
-function getKeys(obj) {
-  var keys = [];
-  for (var key in obj) keys.push(key);
-  return keys;
 }
 
 /**
