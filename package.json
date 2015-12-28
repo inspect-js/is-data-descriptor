@@ -10,8 +10,7 @@
   },
   "license": "MIT",
   "files": [
-    "index.js",
-    "utils.js"
+    "index.js"
   ],
   "main": "index.js",
   "engines": {
@@ -21,9 +20,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "arr-diff": "^2.0.0",
-    "kind-of": "^3.0.2",
-    "lazy-cache": "^1.0.3"
+    "kind-of": "^3.0.2"
   },
   "devDependencies": {
     "mocha": "*",
@@ -55,6 +52,9 @@
         "is-descriptor",
         "isobject"
       ]
-    }
+    },
+    "plugins": [
+      "gulp-format-md"
+    ]
   }
 }
