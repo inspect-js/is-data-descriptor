@@ -9,14 +9,14 @@
 
 var typeOf = require('kind-of');
 
-// data descriptor properties
-var data = {
-  configurable: 'boolean',
-  enumerable: 'boolean',
-  writable: 'boolean'
-};
+module.exports = function isDataDescriptor(obj, prop) {
+  // data descriptor properties
+  var data = {
+    configurable: 'boolean',
+    enumerable: 'boolean',
+    writable: 'boolean'
+  };
 
-function isDataDescriptor(obj, prop) {
   if (typeOf(obj) !== 'object') {
     return false;
   }
@@ -46,10 +46,4 @@ function isDataDescriptor(obj, prop) {
     }
   }
   return true;
-}
-
-/**
- * Expose `isDataDescriptor`
- */
-
-module.exports = isDataDescriptor;
+};
