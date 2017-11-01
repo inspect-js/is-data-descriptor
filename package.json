@@ -23,7 +23,7 @@
     "kind-of": "^3.0.2"
   },
   "devDependencies": {
-    "mocha": "*",
+    "mocha": "^3.5.3",
     "should": "*"
   },
   "keywords": [
