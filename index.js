@@ -1,49 +1,29 @@
-/*!
- * is-data-descriptor <https://github.com/jonschlinkert/is-data-descriptor>
- *
- * Copyright (c) 2015-2017, Jon Schlinkert.
- * Released under the MIT License.
- */
-
 'use strict';
 
-var typeOf = require('kind-of');
+const hasOwn = (obj, key) => Object.prototype.hasOwnProperty.call(obj, key);
+const isObject = val => {
+  return val !== null && typeof val === 'object' && !Array.isArray(val);
+};
 
-module.exports = function isDataDescriptor(obj, prop) {
-  // data descriptor properties
-  var data = {
-    configurable: 'boolean',
-    enumerable: 'boolean',
-    writable: 'boolean'
-  };
-
-  if (typeOf(obj) !== 'object') {
-    return false;
-  }
-
-  if (typeof prop === 'string') {
-    var val = Object.getOwnPropertyDescriptor(obj, prop);
-    return typeof val !== 'undefined';
-  }
-
-  if (!('value' in obj) && !('writable' in obj)) {
-    return false;
-  }
-
-  for (var key in obj) {
-    if (key === 'value') continue;
-
-    if (!data.hasOwnProperty(key)) {
-      continue;
-    }
-
-    if (typeOf(obj[key]) === data[key]) {
-      continue;
-    }
-
-    if (typeof obj[key] !== 'undefined') {
+const isDescriptor = (obj, key) => {
+  if (!isObject(obj)) return false;
+  let desc = key ? Object.getOwnPropertyDescriptor(obj, key) : obj;
+  if (isObject(desc)) {
+    let booleans = ['configurable', 'enumerable', 'writable'];
+    if (!hasOwn(desc, 'value') || hasOwn(desc, 'get') || hasOwn(desc, 'set')) {
       return false;
     }
+    for (let key of Object.keys(desc)) {
+      if (booleans.includes(key) && typeof desc[key] !== 'boolean') {
+        return false;
+      }
+      if (!booleans.includes(key) && key !== 'value') {
+        return false;
+      }
+    }
+    return true;
   }
-  return true;
+  return false;
 };
+
+module.exports = isDescriptor;
