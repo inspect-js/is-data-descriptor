@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.1.0](https://github.com/inspect-js/is-data-descriptor/compare/v2.0.0...v2.1.0) - 2023-04-27
+
+### Commits
+
+- [eslint] cleanup [`c18a236`](https://github.com/inspect-js/is-data-descriptor/commit/c18a23640c00f32fca39112381b5cabdaa6a9a55)
+- [Tests] travis -&gt; Github Actions; add `safe-publish-latest`, `npmignore`, `auto-changelog`, `evalmd`, `aud` [`5758410`](https://github.com/inspect-js/is-data-descriptor/commit/5758410ec503add0727f2215633e5b1998c21293)
+- [readme] clean up docs, URLs, package.json, etc [`28f61dd`](https://github.com/inspect-js/is-data-descriptor/commit/28f61dd676d8661ca7468e091ddf2e22bf4a8da2)
+- [Docs] remove verb [`e20d28c`](https://github.com/inspect-js/is-data-descriptor/commit/e20d28cc86ce8a7cbc4beb0f306e5a4034b6d704)
+- [Tests] convert from mocha to tape [`666c175`](https://github.com/inspect-js/is-data-descriptor/commit/666c1755f29668098dc07fbda0eb1d354a4da640)
+- [New] increase support from node 6 down to node 0.4 [`aa43b69`](https://github.com/inspect-js/is-data-descriptor/commit/aa43b699b4a53b97e7af13f4d49eb7a21d253d99)
+- [Tests] add coverage [`8f094f6`](https://github.com/inspect-js/is-data-descriptor/commit/8f094f6809514862f367c07bd879f2de42f4d9d0)
+- [meta] switch from `files` field to npmignore; add `exports` [`2769e1d`](https://github.com/inspect-js/is-data-descriptor/commit/2769e1d408330b05331a40216e7a6bdce2322f69)
+- [Deps] remove unused `kind-of` [`bc87bcd`](https://github.com/inspect-js/is-data-descriptor/commit/bc87bcd5f9abfa3ac8bcd2daf85ca9c380cb225d)
+
 ## [v2.0.0](https://github.com/inspect-js/is-data-descriptor/compare/v1.0.0...v2.0.0) - 2018-12-13
 
 ### Commits
