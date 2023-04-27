@@ -9,11 +9,6 @@
 
 > Returns true if a value has the characteristics of a valid JavaScript data descriptor.
 
-## Usage
-
-```js
-```
-
 ## Examples
 
 `true` when the descriptor has valid properties with valid values.
