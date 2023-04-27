@@ -84,11 +84,11 @@ A descriptor may have additional _invalid_ properties (an error will **not** be 
 var foo = {};
 
 Object.defineProperty(foo, 'bar', {
-  enumerable: true,
-  whatever: 'blah', // invalid, but doesn't cause an error
-  get: function() {
-    return 'baz';
-  }
+	enumerable: true,
+	whatever: 'blah', // invalid, but doesn't cause an error
+	get: function() {
+		return 'baz';
+	}
 });
 
 console.log(foo.bar);
@@ -139,7 +139,7 @@ You might also be interested in these projects:
 
 ### Contributors
 
-| **Commits** | **Contributor** | 
+| **Commits** | **Contributor** |
 | --- | --- |
 | 21 | [jonschlinkert](https://github.com/jonschlinkert) |
 | 2 | [realityking](https://github.com/realityking) |

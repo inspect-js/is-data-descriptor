@@ -1,0 +1,18 @@
+{
+	"root": true,
+
+	"extends": "@ljharb/eslint-config/node/0.4",
+
+	"overrides": [
+		{
+			"files": "test/**/*.js",
+			"env": {
+				"mocha": true,
+			},
+			"rules": {
+				"max-lines-per-function": "warn",
+				"max-nested-callbacks": "warn",
+			},
+		},
+	],
+}
