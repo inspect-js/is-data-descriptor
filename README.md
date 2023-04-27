@@ -1,68 +1,44 @@
-# is-data-descriptor [![NPM version](https://img.shields.io/npm/v/is-data-descriptor.svg?style=flat)](https://www.npmjs.com/package/is-data-descriptor) [![NPM monthly downloads](https://img.shields.io/npm/dm/is-data-descriptor.svg?style=flat)](https://npmjs.org/package/is-data-descriptor) [![NPM total downloads](https://img.shields.io/npm/dt/is-data-descriptor.svg?style=flat)](https://npmjs.org/package/is-data-descriptor) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/is-data-descriptor.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/is-data-descriptor)
+# is-data-descriptor <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
+
+[![github actions][actions-image]][actions-url]
+[![coverage][codecov-image]][codecov-url]
+[![License][license-image]][license-url]
+[![Downloads][downloads-image]][downloads-url]
+
+[![npm badge][npm-badge-png]][package-url]
 
 > Returns true if a value has the characteristics of a valid JavaScript data descriptor.
-
-Please consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.
-
-## Install
-
-Install with [npm](https://www.npmjs.com/):
-
-```sh
-$ npm install --save is-data-descriptor
-```
 
 ## Usage
 
 ```js
-var isDataDesc = require('is-data-descriptor');
 ```
 
 ## Examples
 
 `true` when the descriptor has valid properties with valid values.
+`false` when not an object or when the object has invalid properties.
 
 ```js
-// `value` can be anything
-isDataDesc({value: 'foo'})
-isDataDesc({value: function() {}})
-isDataDesc({value: true})
-//=> true
-```
+var isDataDesc = require('is-data-descriptor');
+var assert = require('assert');
 
-`false` when not an object
+assert.equal(true, isDataDesc({ value: 'foo' }));
+assert.equal(true, isDataDesc({ value: function () {} }));
+assert.equal(true, isDataDesc({ value: true }));
 
-```js
-isDataDesc('a')
-//=> false
-isDataDesc(null)
-//=> false
-isDataDesc([])
-//=> false
-```
+assert.equal(false, isDataDesc('a'));
+assert.equal(false, isDataDesc(null));
+assert.equal(false, isDataDesc([]));
 
-`false` when the object has invalid properties
-
-```js
-isDataDesc({value: 'foo', bar: 'baz'})
-//=> false
-isDataDesc({value: 'foo', bar: 'baz'})
-//=> false
-isDataDesc({value: 'foo', get: function(){}})
-//=> false
-isDataDesc({get: function(){}, value: 'foo'})
-//=> false
-```
-
-`false` when a value is not the correct type
-
-```js
-isDataDesc({value: 'foo', enumerable: 'foo'})
-//=> false
-isDataDesc({value: 'foo', configurable: 'foo'})
-//=> false
-isDataDesc({value: 'foo', writable: 'foo'})
-//=> false
+assert.equal(false, isDataDesc({ value: 'foo', bar: 'baz' }));
+assert.equal(false, isDataDesc({ value: 'foo', bar: 'baz' }));
+assert.equal(false, isDataDesc({ value: 'foo', get: function () {} }));
+assert.equal(false, isDataDesc({ get: function () {}, value: 'foo' }) );
+ 
+assert.equal(false, isDataDesc({ value: 'foo', enumerable: 'foo' }));
+assert.equal(false, isDataDesc({ value: 'foo', configurable: 'foo' }));
+assert.equal(false, isDataDesc({ value: 'foo', writable: 'foo' }));
 ```
 
 ## Valid properties
@@ -95,53 +71,29 @@ console.log(foo.bar);
 //=> 'baz'
 ```
 
-## About
-
-<details>
-<summary><strong>Contributing</strong></summary>
-
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).
-
-</details>
-
-<details>
-<summary><strong>Running Tests</strong></summary>
-
-Running and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:
-
-```sh
-$ npm install && npm test
-```
-
-</details>
-
 ### Related projects
 
 You might also be interested in these projects:
 
-* [is-accessor-descriptor](https://www.npmjs.com/package/is-accessor-descriptor): Returns true if a value has the characteristics of a valid JavaScript accessor descriptor. | [homepage](https://github.com/jonschlinkert/is-accessor-descriptor "Returns true if a value has the characteristics of a valid JavaScript accessor descriptor.")
-* [is-data-descriptor](https://www.npmjs.com/package/is-data-descriptor): Returns true if a value has the characteristics of a valid JavaScript data descriptor. | [homepage](https://github.com/jonschlinkert/is-data-descriptor "Returns true if a value has the characteristics of a valid JavaScript data descriptor.")
-* [is-descriptor](https://www.npmjs.com/package/is-descriptor): Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for… [more](https://github.com/jonschlinkert/is-descriptor) | [homepage](https://github.com/jonschlinkert/is-descriptor "Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.")
-* [isobject](https://www.npmjs.com/package/isobject): Returns true if the value is an object and not an array or null. | [homepage](https://github.com/jonschlinkert/isobject "Returns true if the value is an object and not an array or null.")
+* [is-accessor-descriptor](https://www.npmjs.com/package/is-accessor-descriptor): Returns true if a value has the characteristics of a valid JavaScript accessor descriptor.
+* [is-descriptor](https://www.npmjs.com/package/is-descriptor): Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for… [more](https://github.com/jonschlinkert/is-descriptor)
+* [is-object](https://www.npmjs.com/package/is-object): Returns true if the value is an object and not an array or null.
 
-### Contributors
+## Tests
+Simply clone the repo, `npm install`, and run `npm test`
 
-| **Commits** | **Contributor** |
-| --- | --- |
-| 21 | [jonschlinkert](https://github.com/jonschlinkert) |
-| 2 | [realityking](https://github.com/realityking) |
-
-### Author
-
-**Jon Schlinkert**
-
-* [github/jonschlinkert](https://github.com/jonschlinkert)
-* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)
-
-### License
-
-Copyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).
-Released under the [MIT License](LICENSE).
-
-***
-
+[package-url]: https://npmjs.org/package/is-data-descriptor
+[npm-version-svg]: https://versionbadg.es/inspect-js/is-data-descriptor.svg
+[deps-svg]: https://david-dm.org/inspect-js/is-data-descriptor.svg
+[deps-url]: https://david-dm.org/inspect-js/is-data-descriptor
+[dev-deps-svg]: https://david-dm.org/inspect-js/is-data-descriptor/dev-status.svg
+[dev-deps-url]: https://david-dm.org/inspect-js/is-data-descriptor#info=devDependencies
+[npm-badge-png]: https://nodei.co/npm/is-data-descriptor.png?downloads=true&stars=true
+[license-image]: https://img.shields.io/npm/l/is-data-descriptor.svg
+[license-url]: LICENSE
+[downloads-image]: https://img.shields.io/npm/dm/is-data-descriptor.svg
+[downloads-url]: https://npm-stat.com/charts.html?package=is-data-descriptor
+[codecov-image]: https://codecov.io/gh/inspect-js/is-data-descriptor/branch/main/graphs/badge.svg
+[codecov-url]: https://app.codecov.io/gh/inspect-js/is-data-descriptor/
+[actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/inspect-js/is-data-descriptor
+[actions-url]: https://github.com/inspect-js/is-data-descriptor/actions

@@ -1,35 +1,17 @@
 {
 	"name": "is-data-descriptor",
-	"description": "Returns true if a value has the characteristics of a valid JavaScript data descriptor.",
 	"version": "2.0.0",
-	"homepage": "https://github.com/jonschlinkert/is-data-descriptor",
-	"author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-	"contributors": [
-		"Jon Schlinkert (http://twitter.com/jonschlinkert)",
-		"Rouven Weßling (www.rouvenwessling.de)"
-	],
-	"repository": "jonschlinkert/is-data-descriptor",
-	"bugs": {
-		"url": "https://github.com/jonschlinkert/is-data-descriptor/issues"
-	},
-	"license": "MIT",
-	"files": [
-		"index.js"
-	],
+	"description": "Returns true if a value has the characteristics of a valid JavaScript data descriptor.",
 	"main": "index.js",
-	"engines": {
-		"node": ">=6"
-	},
 	"scripts": {
 		"lint": "eslint --ext=js,mjs .",
 		"pretest": "npm run lint",
 		"tests-only": "tape 'test/**/*.js'",
 		"test": "npm run tests-only"
 	},
-	"devDependencies": {
-		"@ljharb/eslint-config": "^21.0.1",
-		"eslint": "=8.8.0",
-		"tape": "^5.6.3"
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/inspect-js/is-data-descriptor.git"
 	},
 	"keywords": [
 		"accessor",
@@ -48,5 +30,27 @@
 		"type",
 		"valid",
 		"value"
-	]
+	],
+	"author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/inspect-js/is-data-descriptor/issues"
+	},
+	"homepage": "https://github.com/inspect-js/is-data-descriptor",
+	"contributors": [
+		"Jordan Harband (https://github.com/ljharb)",
+		"Jon Schlinkert (https://twitter.com/jonschlinkert)",
+		"Rouven Weßling (www.rouvenwessling.de)"
+	],
+	"files": [
+		"index.js"
+	],
+	"devDependencies": {
+		"@ljharb/eslint-config": "^21.0.1",
+		"eslint": "=8.8.0",
+		"tape": "^5.6.3"
+	},
+	"engines": {
+		"node": ">=6"
+	}
 }
