@@ -75,4 +75,12 @@ test('isDescriptor', function (t) {
 			s2t.end();
 		});
 	});
+
+	t.test('with a key', function (st) {
+		st.equal(isDescriptor({ foo: 3 }, 'foo'), true, 'a data property is a data descriptor');
+		st.equal(isDescriptor({ '': 3 }, ''), true, 'an empty string data property is a data descriptor');
+		st.equal(isDescriptor({ 0: 3 }, 0), true, 'a zero data property is a data descriptor');
+
+		st.end();
+	});
 });

@@ -11,7 +11,7 @@ module.exports = function isDataDescriptor(obj, key) {
 	if (!isObject(obj)) {
 		return false;
 	}
-	var desc = key ? Object.getOwnPropertyDescriptor(obj, key) : obj;
+	var desc = arguments.length > 1 ? Object.getOwnPropertyDescriptor(obj, key) : obj;
 	if (isObject(desc)) {
 		if (
 			!hasOwn(desc, 'value')
