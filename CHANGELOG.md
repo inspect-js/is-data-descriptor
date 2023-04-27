@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.1.1](https://github.com/inspect-js/is-data-descriptor/compare/v2.1.0...v2.1.1) - 2023-04-27
+
+### Commits
+
+- [Fix] when an object/key pair is provided, check arguments.length instead of key truthiness [`72692d3`](https://github.com/inspect-js/is-data-descriptor/commit/72692d3c1184e4d1f11faecbc9446b21cf5610a1)
+- [readme] remove empty section [`72ec85b`](https://github.com/inspect-js/is-data-descriptor/commit/72ec85b9c4d781d551f19e595cca91b5f933d90d)
+
 ## [v2.1.0](https://github.com/inspect-js/is-data-descriptor/compare/v2.0.0...v2.1.0) - 2023-04-27
 
 ### Commits
