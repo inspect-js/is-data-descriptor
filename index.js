@@ -6,6 +6,7 @@ var hasOwn = require('hasown');
 module.exports = function isDataDescriptor(obj, prop) {
 	// data descriptor properties
 	var data = {
+		__proto__: null,
 		configurable: 'boolean',
 		enumerable: 'boolean',
 		writable: 'boolean',
