@@ -13,16 +13,16 @@ test('isDescriptor', function (t) {
 		st.end();
 	});
 
-	t.test('should not be false when the object has invalid properties:', function (st) {
+	t.test('should not be false when the object has invalid properties, or valid accessor descriptor properties:', function (st) {
 		st.ok(isDescriptor({ value: 'foo', bar: 'baz' }));
 		st.ok(isDescriptor({ value: 'foo', bar: 'baz' }));
-		st.ok(isDescriptor({ value: 'foo', get: noop }));
-		st.ok(isDescriptor({ get: noop, value: noop }));
+		st.notOk(isDescriptor({ value: 'foo', set: noop }));
+		st.notOk(isDescriptor({ get: noop, value: noop }));
 
 		st.end();
 	});
 
-	t.test('should be true when the object has valid data-descriptor properties', function (st) {
+	t.test('should be true when the object has valid data descriptor properties', function (st) {
 		st.ok(isDescriptor({ value: 'foo' }));
 		st.ok(isDescriptor({ value: noop }));
 
@@ -40,7 +40,7 @@ test('isDescriptor', function (t) {
 	t.test('should be true when a value is a valid data descriptor', function (st) {
 		st.ok(isDescriptor({ value: 'foo' }));
 		st.ok(isDescriptor({ writable: true }));
-		st.ok(isDescriptor({ value: 'foo', get: 'foo' }));
+		st.ok(isDescriptor({ value: 'foo', bar: 'foo' }));
 
 		st.end();
 	});

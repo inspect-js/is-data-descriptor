@@ -19,6 +19,10 @@ module.exports = function isDataDescriptor(obj, prop) {
 		return typeof val !== 'undefined';
 	}
 
+	if ('get' in obj || 'set' in obj) {
+		return false;
+	}
+
 	if (!('value' in obj) && !('writable' in obj)) {
 		return false;
 	}
@@ -26,7 +30,8 @@ module.exports = function isDataDescriptor(obj, prop) {
 	for (var key in obj) { // eslint-disable-line no-restricted-syntax
 		if (
 			key !== 'value'
-			&& Object.hasOwnProperty.call(data, key)
+			&& Object.prototype.hasOwnProperty.call(obj, key)
+			&& Object.prototype.hasOwnProperty.call(data, key)
 			&& typeOf(obj[key]) !== data[key]
 			&& typeof obj[key] !== 'undefined'
 		) {
