@@ -50,18 +50,5 @@
 		"type",
 		"valid",
 		"value"
-	],
-	"verb": {
-		"related": {
-			"list": [
-				"is-accessor-descriptor",
-				"is-data-descriptor",
-				"is-descriptor",
-				"isobject"
-			]
-		},
-		"plugins": [
-			"gulp-format-md"
-		]
-	}
+	]
 }
