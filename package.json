@@ -1,6 +1,6 @@
 {
 	"name": "is-data-descriptor",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Returns true if a value has the characteristics of a valid JavaScript data descriptor.",
 	"main": "index.js",
 	"exports": {
