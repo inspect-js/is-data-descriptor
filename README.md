@@ -40,7 +40,6 @@ assert.equal(isDataDesc({ value: true }), true);
 ```js
 assert.equal(isDataDesc('a'), false);
 assert.equal(isDataDesc(null), false);
-assert.equal(isDataDesc([]), false);
 ```
 
 `false` when the object has invalid properties

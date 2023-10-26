@@ -8,7 +8,6 @@ test('isDescriptor', function (t) {
 	t.test('value type', function (st) {
 		st.notOk(isDescriptor('a'), 'string is not a descriptor');
 		st.notOk(isDescriptor(null), 'null is not a descriptor');
-		st.notOk(isDescriptor([]), 'Array is not a descriptor');
 
 		st.end();
 	});

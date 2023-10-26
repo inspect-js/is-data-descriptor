@@ -1,6 +1,5 @@
 'use strict';
 
-var typeOf = require('kind-of');
 var hasOwn = require('hasown');
 
 // data descriptor properties
@@ -12,7 +11,7 @@ var data = {
 };
 
 module.exports = function isDataDescriptor(obj, prop) {
-	if (typeOf(obj) !== 'object') {
+	if (!obj || typeof obj !== 'object') {
 		return false;
 	}
 
@@ -30,7 +29,7 @@ module.exports = function isDataDescriptor(obj, prop) {
 			key !== 'value'
 			&& hasOwn(obj, key)
 			&& hasOwn(data, key)
-			&& typeOf(obj[key]) !== data[key]
+			&& typeof obj[key] !== data[key]
 			&& typeof obj[key] !== 'undefined'
 		) {
 			return false;

@@ -54,8 +54,7 @@
 		"Rouven Weßling (www.rouvenwessling.de)"
 	],
 	"dependencies": {
-		"hasown": "^2.0.0",
-		"kind-of": "^6.0.3"
+		"hasown": "^2.0.0"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^21.1.0",
