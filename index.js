@@ -15,7 +15,7 @@ module.exports = function isDataDescriptor(obj, prop) {
 		return false;
 	}
 
-	if (typeof prop === 'string') {
+	if (typeof prop === 'string' || typeof prop === 'symbol') {
 		return hasOwn(obj, prop);
 	}
 

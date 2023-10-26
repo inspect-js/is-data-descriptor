@@ -58,4 +58,10 @@ test('isDescriptor', function (t) {
 
 		st.end();
 	});
+
+	t.test('two-arg form', function (st) {
+		st.ok(isDescriptor({ value: 'foo' }, 'value'));
+
+		st.end();
+	});
 });
