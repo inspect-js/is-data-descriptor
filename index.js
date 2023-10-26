@@ -1,6 +1,7 @@
 'use strict';
 
 var hasOwn = require('hasown');
+var gOPD = require('gopd');
 
 // data descriptor properties
 var data = {
@@ -16,7 +17,7 @@ module.exports = function isDataDescriptor(obj, prop) {
 	}
 
 	if (typeof prop === 'string' || typeof prop === 'symbol') {
-		return hasOwn(obj, prop);
+		return gOPD ? isDataDescriptor(gOPD(obj, prop)) : hasOwn(obj, prop);
 	}
 
 	if ('get' in obj || 'set' in obj) {
