@@ -28,6 +28,7 @@ module.exports = function isDataDescriptor(obj, prop) {
 	for (var key in obj) { // eslint-disable-line no-restricted-syntax
 		if (
 			key !== 'value'
+			&& hasOwn(obj, key)
 			&& hasOwn(data, key)
 			&& typeOf(obj[key]) !== data[key]
 			&& typeof obj[key] !== 'undefined'
