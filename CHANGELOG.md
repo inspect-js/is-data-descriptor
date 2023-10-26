@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.1.2](https://github.com/inspect-js/is-data-descriptor/compare/v2.1.1...v2.1.2) - 2023-10-25
+
+### Commits
+
+- [Refactor] use `hasown` [`77ad812`](https://github.com/inspect-js/is-data-descriptor/commit/77ad8129c7543f6826e2cbcadc015cc815ef94b7)
+- [Dev Deps] update `@ljharb/eslint-config`, `aud`, `tape` [`88f2cb7`](https://github.com/inspect-js/is-data-descriptor/commit/88f2cb744242131a98086967ea4a3c5d42c6fa77)
+
 ## [v2.1.1](https://github.com/inspect-js/is-data-descriptor/compare/v2.1.0...v2.1.1) - 2023-04-27
 
 ### Commits
