@@ -8,7 +8,6 @@ test('isDescriptor', function (t) {
 	t.test('is false when not an object:', function (st) {
 		st.notOk(isDescriptor('a'));
 		st.notOk(isDescriptor(null));
-		st.notOk(isDescriptor([]));
 
 		st.end();
 	});

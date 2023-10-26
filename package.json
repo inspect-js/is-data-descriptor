@@ -53,8 +53,7 @@
 		"Jon Schlinkert (https://twitter.com/jonschlinkert)"
 	],
 	"dependencies": {
-		"hasown": "^2.0.0",
-		"kind-of": "^3.0.2"
+		"hasown": "^2.0.0"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^21.1.0",

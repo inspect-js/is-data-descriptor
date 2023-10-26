@@ -25,7 +25,6 @@ assert.equal(isDataDesc({ value: true }), true);
 
 assert.equal(isDataDesc('a'), false);
 assert.equal(isDataDesc(null), false);
-assert.equal(isDataDesc([]), false);
 
 assert.equal(isDataDesc({ value: 'foo', configurable: 'baz' }), false);
 assert.equal(isDataDesc({ value: 'foo', enumerable: 'baz' }), false);
