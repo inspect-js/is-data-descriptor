@@ -14,6 +14,7 @@ $ npm i is-data-descriptor --save
 
 ```js
 var isDataDesc = require('is-data-descriptor');
+var assert = require('assert');
 ```
 
 ## Examples
@@ -22,45 +23,34 @@ var isDataDesc = require('is-data-descriptor');
 
 ```js
 // `value` can be anything
-isDataDesc({value: 'foo'})
-isDataDesc({value: function() {}})
-isDataDesc({value: true})
-//=> true
+assert.equal(isDataDesc({ value: 'foo' }), true);
+assert.equal(isDataDesc({ value() {} }), true);
+assert.equal(isDataDesc({ value: true }), true);
 ```
 
 `false` when not an object
 
 ```js
-isDataDesc('a')
-//=> false
-isDataDesc(null)
-//=> false
-isDataDesc([])
-//=> false
+assert.equal(isDataDesc('a'), false);
+assert.equal(isDataDesc(null), false);
+assert.equal(isDataDesc([]), false);
 ```
 
 `false` when the object has invalid properties
 
 ```js
-isDataDesc({value: 'foo', bar: 'baz'})
-//=> false
-isDataDesc({value: 'foo', bar: 'baz'})
-//=> false
-isDataDesc({value: 'foo', get: function(){}})
-//=> false
-isDataDesc({get: function(){}, value: 'foo'})
-//=> false
+assert.equal(isDataDesc({ value: 'foo', bar: 'baz' }), false);
+assert.equal(isDataDesc({ value: 'foo', bar: 'baz' }), false);
+assert.equal(isDataDesc({ value: 'foo', get() {} }), false);
+assert.equal(isDataDesc({ get() {}, value: 'foo' }), false);
 ```
 
 `false` when a value is not the correct type
 
 ```js
-isDataDesc({value: 'foo', enumerable: 'foo'})
-//=> false
-isDataDesc({value: 'foo', configurable: 'foo'})
-//=> false
-isDataDesc({value: 'foo', writable: 'foo'})
-//=> false
+assert.equal(isDataDesc({ value: 'foo', enumerable: 'foo' }), false);
+assert.equal(isDataDesc({ value: 'foo', configurable: 'foo' }), false);
+assert.equal(isDataDesc({ value: 'foo', writable: 'foo' }), false);
 ```
 
 ## Valid properties
@@ -84,13 +74,12 @@ var foo = {};
 Object.defineProperty(foo, 'bar', {
   enumerable: true,
   whatever: 'blah', // invalid, but doesn't cause an error
-  get: function() {
+  get() {
     return 'baz';
   }
 });
 
-console.log(foo.bar);
-//=> 'baz'
+assert.equal(foo.bar, 'baz');
 ```
 
 ## Related projects
