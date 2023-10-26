@@ -23,15 +23,18 @@
 	"scripts": {
 		"lint": "eslint --ext=js,mjs .",
 		"pretest": "npm run lint",
-		"test": "mocha"
+		"tests-only": "tape 'test/**/*.js'",
+		"test": "npm run tests-only",
+		"posttest": "aud --production"
 	},
 	"dependencies": {
 		"kind-of": "^6.0.0"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^21.1.0",
+		"aud": "^2.0.3",
 		"eslint": "=8.8.0",
-		"mocha": "^3.5.3"
+		"tape": "^5.7.2"
 	},
 	"keywords": [
 		"accessor",
