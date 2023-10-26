@@ -1,9 +1,11 @@
 'use strict';
 
+var hasOwn = require('hasown');
 var typeOf = require('kind-of');
 
 // data descriptor properties
 var data = {
+	__proto__: null,
 	configurable: 'boolean',
 	enumerable: 'boolean',
 	writable: 'boolean'
@@ -15,8 +17,7 @@ module.exports = function isDataDescriptor(obj, prop) {
 	}
 
 	if (typeof prop === 'string') {
-		var val = Object.getOwnPropertyDescriptor(obj, prop);
-		return typeof val !== 'undefined';
+		return hasOwn(obj, prop);
 	}
 
 	if ('get' in obj || 'set' in obj) {
@@ -30,8 +31,8 @@ module.exports = function isDataDescriptor(obj, prop) {
 	for (var key in obj) { // eslint-disable-line no-restricted-syntax
 		if (
 			key !== 'value'
-			&& Object.prototype.hasOwnProperty.call(obj, key)
-			&& Object.prototype.hasOwnProperty.call(data, key)
+			&& hasOwn(obj, key)
+			&& hasOwn(data, key)
 			&& typeOf(obj[key]) !== data[key]
 			&& typeof obj[key] !== 'undefined'
 		) {
