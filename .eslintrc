@@ -1,0 +1,21 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"complexity": "off",
+	},
+
+	"overrides": [
+		{
+			"files": "test/**/*.js",
+			"env": {
+				"mocha": true
+			},
+			"rules": {
+				"max-lines-per-function": "warn",
+			},
+		},
+	],
+}
