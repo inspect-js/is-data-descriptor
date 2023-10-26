@@ -45,8 +45,8 @@ assert.equal(isDataDesc(null), false);
 `false` when the object has invalid properties
 
 ```js
-assert.equal(isDataDesc({ value: 'foo', bar: 'baz' }), false);
-assert.equal(isDataDesc({ value: 'foo', bar: 'baz' }), false);
+assert.equal(isDataDesc({ value: 'foo', enumerable: 'baz' }), false);
+assert.equal(isDataDesc({ value: 'foo', configurable: 'baz' }), false);
 assert.equal(isDataDesc({ value: 'foo', get() {} }), false);
 assert.equal(isDataDesc({ get() {}, value: 'foo' }), false);
 ```

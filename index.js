@@ -20,7 +20,11 @@ module.exports = function isDataDescriptor(obj, prop) {
 		return typeof val !== 'undefined';
 	}
 
-	if (!('value' in obj) && !('writable' in obj)) {
+	if (
+		(!('value' in obj) && !('writable' in obj))
+		|| 'get' in obj
+		|| 'set' in obj
+	) {
 		return false;
 	}
 
