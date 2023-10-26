@@ -80,5 +80,8 @@
 		"ignore": [
 			".github/workflows"
 		]
+	},
+	"dependencies": {
+		"hasown": "^2.0.0"
 	}
 }

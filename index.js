@@ -1,8 +1,6 @@
 'use strict';
 
-var hasOwn = function (obj, key) {
-	return Object.prototype.hasOwnProperty.call(obj, key);
-};
+var hasOwn = require('hasown');
 var isObject = function (val) {
 	return val !== null && typeof val === 'object' && !Array.isArray(val);
 };
