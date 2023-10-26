@@ -13,3 +13,8 @@ vendor
 .idea
 benchmark
 coverage
+
+# Only apps should have lockfiles
+npm-shrinkwrap.json
+package-lock.json
+yarn.lock
