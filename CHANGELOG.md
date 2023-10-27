@@ -33,13 +33,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [meta] switch from `files` field to npmignore; add `exports` [`2769e1d`](https://github.com/inspect-js/is-data-descriptor/commit/2769e1d408330b05331a40216e7a6bdce2322f69)
 - [Deps] remove unused `kind-of` [`bc87bcd`](https://github.com/inspect-js/is-data-descriptor/commit/bc87bcd5f9abfa3ac8bcd2daf85ca9c380cb225d)
 
-## [v2.0.0](https://github.com/inspect-js/is-data-descriptor/compare/v1.0.0...v2.0.0) - 2018-12-13
+## [v2.0.0](https://github.com/inspect-js/is-data-descriptor/compare/v1.0.1...v2.0.0) - 2018-12-13
 
 ### Commits
 
 - refactor [`8dcc492`](https://github.com/inspect-js/is-data-descriptor/commit/8dcc492bfb8e6d5b7964c1c566cdfe27ffbd8b0a)
 
-## [v1.0.0](https://github.com/inspect-js/is-data-descriptor/compare/v0.1.4...v1.0.0) - 2017-11-01
+## [v1.0.1](https://github.com/inspect-js/is-data-descriptor/compare/v1.0.0...v1.0.1) - 2023-10-26
+
+### Commits
+
+- [eslint] actually use eslint [`65fed07`](https://github.com/inspect-js/is-data-descriptor/commit/65fed07b2dde027da64f303c21a44a4375a2e2bd)
+- [readme] clean up readme, remove verb [`10ad663`](https://github.com/inspect-js/is-data-descriptor/commit/10ad663093b0ed9c9c0c13c6db4ead4351b8670e)
+- [meta] clean up package.json [`7f76a01`](https://github.com/inspect-js/is-data-descriptor/commit/7f76a015050fc87e9b394440c3b5283cf55b2c82)
+- [meta] update `.gitignore` [`a2ca593`](https://github.com/inspect-js/is-data-descriptor/commit/a2ca593bb1173e73f23eb401e455249c71c2eda8)
+- [Tests] switch to tape [`70540e5`](https://github.com/inspect-js/is-data-descriptor/commit/70540e5449ef3239051d4e40dce8a5a1978d1634)
+- [Tests] migrate from travis to github actions [`eee138d`](https://github.com/inspect-js/is-data-descriptor/commit/eee138d84d57191310acf3e7fdc83f5951570188)
+- [Fix] properly return false for an accessor descriptor [`2c213cd`](https://github.com/inspect-js/is-data-descriptor/commit/2c213cd67d558c169a02892dc52592ca1d5d8f40)
+- [Performance] move data object to module level [`37688a1`](https://github.com/inspect-js/is-data-descriptor/commit/37688a1653f3a2a364f14bb396803413cb435963)
+- [Fix] allow any non-primitive; arrays and functions are objects too [`197c77a`](https://github.com/inspect-js/is-data-descriptor/commit/197c77a39c53d12d7a091bcc029fcf7d75ce3a26)
+- Only apps should have lockfiles [`20aa6e5`](https://github.com/inspect-js/is-data-descriptor/commit/20aa6e513aeb4bb84be63e278ce073c860deeade)
+- [Robustness] switch to `hasown` [`aa48e2f`](https://github.com/inspect-js/is-data-descriptor/commit/aa48e2f61b3fb29e80cf655618d1573a21e8433e)
+- [Fix] properly guard for-in loop [`014971e`](https://github.com/inspect-js/is-data-descriptor/commit/014971ea90715c2675511b89d05df00d4be10ecf)
+- [Robustness] use a null object just in case [`ab05aad`](https://github.com/inspect-js/is-data-descriptor/commit/ab05aad03368d202505c4acde07ebc22f8da128d)
+
+## [v1.0.0](https://github.com/inspect-js/is-data-descriptor/compare/v0.1.5...v1.0.0) - 2017-11-01
 
 ### Merged
 
@@ -51,6 +69,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - run update [`63e5992`](https://github.com/inspect-js/is-data-descriptor/commit/63e5992c6b953d652952cecb93468897ae8e5e29)
 - update verb, generate readme documentation [`42dcba2`](https://github.com/inspect-js/is-data-descriptor/commit/42dcba2627fe655daa21aec843ca8de849f26cd6)
 - minor edits [`23164cb`](https://github.com/inspect-js/is-data-descriptor/commit/23164cbc3496f7b13ec470781f05636ef610eecb)
+
+## [v0.1.5](https://github.com/inspect-js/is-data-descriptor/compare/v0.1.4...v0.1.5) - 2023-10-26
+
+### Commits
+
+- [eslint] actually use eslint [`dce7eae`](https://github.com/inspect-js/is-data-descriptor/commit/dce7eaea756b16ceb9de6361c1f6ae424e4607cb)
+- [meta] update package.json etc from main [`1ebc548`](https://github.com/inspect-js/is-data-descriptor/commit/1ebc548ff35b653bf3442884ea15a5106a468eb4)
+- [readme] remove verb [`8178901`](https://github.com/inspect-js/is-data-descriptor/commit/8178901ff4a02f77eabe1a57d395b9759a5dd54c)
+- [Tests] switch to tape [`95ff316`](https://github.com/inspect-js/is-data-descriptor/commit/95ff3166a7a3a1967f65a38a51f3aaab854bcf12)
+- [readme] update from main [`bb8bcf2`](https://github.com/inspect-js/is-data-descriptor/commit/bb8bcf2ff298afe02e96f84acee8dd3efb3fc178)
+- [Tests] migrate from travis to github actions [`a46e5a4`](https://github.com/inspect-js/is-data-descriptor/commit/a46e5a4bcf0b6ffa724e0e020de31b38ef636ec7)
+- [readme] use `evalmd` [`7648a08`](https://github.com/inspect-js/is-data-descriptor/commit/7648a08ed9329999f1a272b2797afbdcbffe6c48)
+- [Tests] move into a test dir [`f0f3521`](https://github.com/inspect-js/is-data-descriptor/commit/f0f352180550868cdada6fb01e9e85b56cfb30fa)
+- [Fix] correctly return false for something with get or set [`16bcab0`](https://github.com/inspect-js/is-data-descriptor/commit/16bcab054ae075f25f319dbbded100637098400c)
+- [Fix] allow any non-primitive; arrays and functions are objects too [`f01936a`](https://github.com/inspect-js/is-data-descriptor/commit/f01936a33307ae2e3ae0565b4e09f0559feff59e)
+- [Refactor] use `hasown` [`060ed0a`](https://github.com/inspect-js/is-data-descriptor/commit/060ed0aa7c6afefa390f623e321b186d056fba6f)
+- [Fix] accept a symbol in the two-arg form [`78b6215`](https://github.com/inspect-js/is-data-descriptor/commit/78b6215b682e194fe3eaaf4344074472143afedf)
+- Only apps should have lockfiles [`bbf6d2e`](https://github.com/inspect-js/is-data-descriptor/commit/bbf6d2ef78a07cbc5cc78d76681ce3c807c06d00)
+- [Fix] use correct logic for two-arg form [`1f77993`](https://github.com/inspect-js/is-data-descriptor/commit/1f779935fa9bb60e69cdb8fdc84366827aabd162)
 
 ## [v0.1.4](https://github.com/inspect-js/is-data-descriptor/compare/v0.1.3...v0.1.4) - 2015-12-28
 

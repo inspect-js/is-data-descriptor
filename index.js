@@ -1,6 +1,8 @@
 'use strict';
 
 var hasOwn = require('hasown');
+var gOPD = require('gopd');
+
 var isObject = function (val) {
 	return val !== null && typeof val === 'object' && !Array.isArray(val);
 };
@@ -9,7 +11,7 @@ module.exports = function isDataDescriptor(obj, key) {
 	if (!isObject(obj)) {
 		return false;
 	}
-	var desc = arguments.length > 1 ? Object.getOwnPropertyDescriptor(obj, key) : obj;
+	var desc = arguments.length > 1 ? gOPD(obj, key) : obj;
 	if (isObject(desc)) {
 		if (
 			!hasOwn(desc, 'value')

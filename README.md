@@ -57,24 +57,21 @@ var foo = {};
 Object.defineProperty(foo, 'bar', {
 	enumerable: true,
 	whatever: 'blah', // invalid, but doesn't cause an error
-	get: function() {
+	get() {
 		return 'baz';
 	}
 });
 
-console.log(foo.bar);
-//=> 'baz'
+assert.equal(foo.bar, 'baz');
 ```
 
 ### Related projects
 
-You might also be interested in these projects:
-
-* [is-accessor-descriptor](https://www.npmjs.com/package/is-accessor-descriptor): Returns true if a value has the characteristics of a valid JavaScript accessor descriptor.
-* [is-descriptor](https://www.npmjs.com/package/is-descriptor): Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for… [more](https://github.com/jonschlinkert/is-descriptor)
-* [is-object](https://www.npmjs.com/package/is-object): Returns true if the value is an object and not an array or null.
+* [is-accessor-descriptor](https://npmjs.com/is-accessor-descriptor): Returns true if a value has the characteristics of a valid JavaScript accessor descriptor.
+* [is-descriptor](https://npmjs.com/is-descriptor): Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for… [more](https://npmjs.com/is-descriptor)
 
 ## Tests
+
 Simply clone the repo, `npm install`, and run `npm test`
 
 [package-url]: https://npmjs.org/package/is-data-descriptor
